@@ -49,18 +49,6 @@ public class Creator {
 		RepositoryConnection conn = repo.getConnection();
 
 		try {
-			// Model model = new LinkedHashModel();
-			// model.setNamespace("foaf", FOAF.NAMESPACE);
-			// model.setNamespace("owl", OWL.NAMESPACE);
-			// model.setNamespace("dc", DC.NAMESPACE);
-			// model.setNamespace("xsd", XMLSchema.NAMESPACE);
-			// model.setNamespace("rdfs", RDFS.NAMESPACE);
-			// model.setNamespace("rdf", RDF.NAMESPACE);
-			// model.setNamespace(CRIME_EVENT.NS_NAME, CRIME_EVENT.NAMESPACE);
-			// model.setNamespace(GEO.NS_NAME, GEO.NAMESPACE);
-			// model.setNamespace(EVENT.NS_NAME, EVENT.NAMESPACE);
-			// model.setNamespace(TIME.NS_NAME, TIME.NAMESPACE);
-
 			ValueFactory factory = repo.getValueFactory();
 
 			// Create event instance

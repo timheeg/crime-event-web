@@ -11,6 +11,9 @@ import org.openrdf.repository.RepositoryConnection;
 
 public class QueryProcessor {
 
+	// TODO Create a query method handler to parse the result set manually
+	// instead of outputting to stdout.
+
 	public static void executeQuery(Repository repo, String query,
 			OutputStream out) throws OpenRDFException {
 		RepositoryConnection conn = repo.getConnection();
@@ -20,17 +23,6 @@ public class QueryProcessor {
 					QueryLanguage.SPARQL, query);
 
 			SPARQLResultsXMLWriter writer = new SPARQLResultsXMLWriter(out);
-			// writer.handleNamespace(GEO.NS_NAME, GEO.NAMESPACE);
-			// writer.handleNamespace(EVENT.NS_NAME, EVENT.NAMESPACE);
-			// writer.handleNamespace(TIME.NS_NAME, TIME.NAMESPACE);
-			// writer.handleNamespace(CRIME_EVENT.NS_NAME,
-			// CRIME_EVENT.NAMESPACE);
-			// writer.handleNamespace("foaf", FOAF.NAMESPACE);
-			// writer.handleNamespace("owl", OWL.NAMESPACE);
-			// writer.handleNamespace("dc", DC.NAMESPACE);
-			// writer.handleNamespace("xsd", XMLSchema.NAMESPACE);
-			// writer.handleNamespace("rdfs", RDFS.NAMESPACE);
-			// writer.handleNamespace("rdf", RDF.NAMESPACE);
 
 			tupleQuery.evaluate(writer);
 		} finally {
