@@ -17,8 +17,33 @@ import crime.event.vocabulary.TIME;
 
 public class Creator {
 
+	/**
+	 * Create a CrimeEvent triple instance.
+	 * 
+	 * @param repo
+	 *            The RDF repository or knowledge base instance to insert.
+	 * @param eventId
+	 *            The event instance identifier, e.g. "event12"
+	 * @param type
+	 *            The type of CrimeEvent, maps to the Crime Event Ontology.
+	 * @param startTime
+	 *            The start date time.
+	 * @param endTime
+	 *            The end date time
+	 * @param latitude
+	 *            In decimal degrees.
+	 * @param longitude
+	 *            In decimal degrees.
+	 * @param geohash
+	 *            The geohash value as a string.
+	 * @param impact
+	 *            The event impact value as a string.
+	 * 
+	 * @throws RepositoryException
+	 *             If a connection cannot be created for the repo.
+	 */
 	public static void createInstance(Repository repo, String eventId,
-			String type, String startTime, String endTime, String lat,
+			String type, String startTime, String endTime, String latitude,
 			String longitude, String geohash, String impact)
 			throws RepositoryException {
 		RepositoryConnection conn = repo.getConnection();
@@ -68,7 +93,7 @@ public class Creator {
 			String locationId = eventId + "location";
 			URI location = factory.createURI(CRIME_EVENT.NAMESPACE, locationId);
 			conn.add(location, RDF.TYPE, GEO.POINT);
-			conn.add(location, GEO.LAT, factory.createLiteral(lat));
+			conn.add(location, GEO.LAT, factory.createLiteral(latitude));
 			conn.add(location, GEO.LONG, factory.createLiteral(longitude));
 			conn.add(event, EVENT.PLACE, location);
 

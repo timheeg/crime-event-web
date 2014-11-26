@@ -1,6 +1,7 @@
 package demo;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -28,7 +29,9 @@ public class RepoTest {
 		repo.initialize();
 
 		System.out.println("Load ontology");
-		OntologyLoader.loadCrimeEventOntology(repo);
+		URL ontology = new URL(
+				"file:///C:/Users/heegt/Desktop/Personal/CS7900 Web 3.0/Project/Ontology/crime-event-ontology.owl");
+		OntologyLoader.loadCrimeEventOntology(repo, ontology);
 
 		System.out.println("Write repo");
 		String outputFilename = "CrimeEventRepo.rdf";
