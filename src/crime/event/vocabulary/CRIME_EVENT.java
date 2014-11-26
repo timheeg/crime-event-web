@@ -6,7 +6,7 @@ import org.openrdf.model.impl.ValueFactoryImpl;
 
 public class CRIME_EVENT {
 
-	public static final String NS_NAME = "crime";
+	public static final String PREFIX = "crime";
 
 	public static final String NAMESPACE = "http://www.knoesis.org/ontologies/Crime#";
 

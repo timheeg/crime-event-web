@@ -6,7 +6,7 @@ import org.openrdf.model.impl.ValueFactoryImpl;
 
 public class GEO {
 
-	public static final String NS_NAME = "geo";
+	public static final String PREFIX = "geo";
 
 	public static final String NAMESPACE = "http://www.w3.org/2003/01/geo/wgs84_pos#";
 

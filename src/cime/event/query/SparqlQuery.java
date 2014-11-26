@@ -6,7 +6,7 @@ public class SparqlQuery {
 
 	public static final String SelectAll = "SELECT ?s WHERE { ?s ?p ?o . } ";
 
-	public static final String SelectThefts = "PREFIX " + CRIME_EVENT.NS_NAME
+	public static final String SelectThefts = "PREFIX " + CRIME_EVENT.PREFIX
 			+ ": <" + CRIME_EVENT.NAMESPACE
 			+ "> SELECT ?s WHERE { ?s ?p crime:Theft . } ";
 }

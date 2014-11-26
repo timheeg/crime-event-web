@@ -6,7 +6,7 @@ import org.openrdf.model.impl.ValueFactoryImpl;
 
 public class EVENT {
 
-	public static final String NS_NAME = "event";
+	public static final String PREFIX = "event";
 
 	public static final String NAMESPACE = "http://purl.org/NET/c4dm/event.owl#";
 

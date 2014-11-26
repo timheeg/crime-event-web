@@ -6,7 +6,7 @@ import org.openrdf.model.impl.ValueFactoryImpl;
 
 public class TIME {
 
-	public static final String NS_NAME = "time";
+	public static final String PREFIX = "time";
 
 	public static final String NAMESPACE = "http://www.w3.org/2006/time#";
 
