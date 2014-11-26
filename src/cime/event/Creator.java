@@ -3,16 +3,9 @@ package cime.event;
 import javax.xml.datatype.DatatypeConstants;
 
 import org.openrdf.model.Literal;
-import org.openrdf.model.Model;
 import org.openrdf.model.URI;
 import org.openrdf.model.ValueFactory;
-import org.openrdf.model.impl.LinkedHashModel;
-import org.openrdf.model.vocabulary.DC;
-import org.openrdf.model.vocabulary.FOAF;
-import org.openrdf.model.vocabulary.OWL;
 import org.openrdf.model.vocabulary.RDF;
-import org.openrdf.model.vocabulary.RDFS;
-import org.openrdf.model.vocabulary.XMLSchema;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
@@ -31,18 +24,17 @@ public class Creator {
 		RepositoryConnection conn = repo.getConnection();
 
 		try {
-			Model model = new LinkedHashModel();
-
-			model.setNamespace("foaf", FOAF.NAMESPACE);
-			model.setNamespace("owl", OWL.NAMESPACE);
-			model.setNamespace("dc", DC.NAMESPACE);
-			model.setNamespace("xsd", XMLSchema.NAMESPACE);
-			model.setNamespace("rdfs", RDFS.NAMESPACE);
-			model.setNamespace("rdf", RDF.NAMESPACE);
-			model.setNamespace(CRIME_EVENT.NS_NAME, CRIME_EVENT.NAMESPACE);
-			model.setNamespace(GEO.NS_NAME, GEO.NAMESPACE);
-			model.setNamespace(EVENT.NS_NAME, EVENT.NAMESPACE);
-			model.setNamespace(TIME.NS_NAME, TIME.NAMESPACE);
+			// Model model = new LinkedHashModel();
+			// model.setNamespace("foaf", FOAF.NAMESPACE);
+			// model.setNamespace("owl", OWL.NAMESPACE);
+			// model.setNamespace("dc", DC.NAMESPACE);
+			// model.setNamespace("xsd", XMLSchema.NAMESPACE);
+			// model.setNamespace("rdfs", RDFS.NAMESPACE);
+			// model.setNamespace("rdf", RDF.NAMESPACE);
+			// model.setNamespace(CRIME_EVENT.NS_NAME, CRIME_EVENT.NAMESPACE);
+			// model.setNamespace(GEO.NS_NAME, GEO.NAMESPACE);
+			// model.setNamespace(EVENT.NS_NAME, EVENT.NAMESPACE);
+			// model.setNamespace(TIME.NS_NAME, TIME.NAMESPACE);
 
 			ValueFactory factory = repo.getValueFactory();
 
