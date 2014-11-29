@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1#" >
+    <!ENTITY cc "http://creativecommons.org/ns#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.knoesis.org/ontologies/Crime#"
+     xml:base="http://www.knoesis.org/ontologies/Crime"
+     xmlns:dc="http://purl.org/dc/elements/1.1#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:cc="http://creativecommons.org/ns#">
+    <owl:Ontology rdf:about="http://knoesis.wright.edu/ontologies/Crime">
+        <rdfs:label>Crime Event Ontology</rdfs:label>
+        <dc:format>application/rdf+xml</dc:format>
+        <dc:subject>Ontology</dc:subject>
+        <dc:rights>Copyright (c) 2014 Timothy Heeg, Surendra Marupudi.</dc:rights>
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <dc:description>A vocabulary for representing crime events.</dc:description>
+        <dc:creator>Timothy Heeg</dc:creator>
+        <dc:language>en</dc:language>
+        <dc:creator>Surendra Marupudi</dc:creator>
+        <dc:title>Crime Event Ontology</dc:title>
+        <dc:date>2014-11-22</dc:date>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <owl:versionIRI rdf:resource="http://knoesis.wright.edu/ontologies/Crime/1.0"/>
+        <owl:imports rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+        <dc:source rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/Crime#geohash -->
+
+    <owl:DatatypeProperty rdf:about="http://knoesis.wright.edu/ontologies/Crime#geohash">
+        <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/Crime#impact -->
+
+    <owl:DatatypeProperty rdf:about="http://knoesis.wright.edu/ontologies/Crime#impact">
+        <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/Crime#Arson -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/Crime#Arson">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/Crime#CrimeEvent -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent">
+        <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/Crime#MissingPerson -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/Crime#MissingPerson">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Assault -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Assault">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#BadChecks -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#BadChecks">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Bribery -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Bribery">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Burglary -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Burglary">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Counterfeiting -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Counterfeiting">
+        <owl:equivalentClass rdf:resource="http://knoesis.wright.edu/ontologies/CrimeEvent#Forgery"/>
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#DUI -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#DUI">
+        <owl:equivalentClass rdf:resource="http://knoesis.wright.edu/ontologies/CrimeEvent#DrivingUnderTheInfluence"/>
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#DisorderlyConduct -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#DisorderlyConduct">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#DrivingUnderTheInfluence -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#DrivingUnderTheInfluence">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Drug -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Drug">
+        <owl:equivalentClass rdf:resource="http://knoesis.wright.edu/ontologies/CrimeEvent#Narcotic"/>
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Drunkenness -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Drunkenness">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Embezzlement -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Embezzlement">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Extortion -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Extortion">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#FamilyOffenses -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#FamilyOffenses">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Forgery -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Forgery">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Fraud -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Fraud">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Gambling -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Gambling">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Kidnapping -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Kidnapping">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Larceny -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Larceny">
+        <owl:equivalentClass rdf:resource="http://knoesis.wright.edu/ontologies/CrimeEvent#Theft"/>
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#LiquorLaws -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#LiquorLaws">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Loitering -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Loitering">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Narcotic -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Narcotic">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#NonCriminal -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#NonCriminal">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#ObsceneMaterial -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#ObsceneMaterial">
+        <owl:equivalentClass rdf:resource="http://knoesis.wright.edu/ontologies/CrimeEvent#Pornography"/>
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#OtherOffenses -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#OtherOffenses">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Pornography -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Pornography">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Prostitution -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Prostitution">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Robbery -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Robbery">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Runaway -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Runaway">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#SexualOffence -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#SexualOffence">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#StolenProperty -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#StolenProperty">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Suicide -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Suicide">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#SuspiciousOccurrence -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#SuspiciousOccurrence">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Theft -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Theft">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Trespass -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Trespass">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Vandalism -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Vandalism">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#VehicleTheft -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#VehicleTheft">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#Warrants -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#Warrants">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://knoesis.wright.edu/ontologies/CrimeEvent#WeaponLaws -->
+
+    <owl:Class rdf:about="http://knoesis.wright.edu/ontologies/CrimeEvent#WeaponLaws">
+        <rdfs:subClassOf rdf:resource="http://knoesis.wright.edu/ontologies/Crime#CrimeEvent"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

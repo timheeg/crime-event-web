@@ -2,8 +2,9 @@ package crime.event.repository;
 
 import info.aduna.iteration.Iterations;
 
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -28,8 +29,8 @@ import crime.event.vocabulary.EVENT;
 
 public class RepoWriter {
 
-	public static void output(String filename, Repository repo)
-			throws OpenRDFException, IOException {
+	public static void output(Writer out, Repository repo)
+			throws OpenRDFException {
 		RepositoryConnection conn = repo.getConnection();
 
 		try {
@@ -45,14 +46,17 @@ public class RepoWriter {
 			model.setNamespace(CRIME_EVENT.PREFIX, CRIME_EVENT.NAMESPACE);
 			model.setNamespace(EVENT.PREFIX, EVENT.NAMESPACE);
 
-			Path workingDir = Paths.get("");
-			String outputFile = workingDir.toAbsolutePath().toString();
-			FileOutputStream out = new FileOutputStream(outputFile + "/"
-					+ filename);
-
 			Rio.write(model, out, RDFFormat.RDFXML);
 		} finally {
 			conn.close();
 		}
+	}
+
+	public static void output(String filename, Repository repo)
+			throws OpenRDFException, IOException {
+		Path workingDir = Paths.get("");
+		String outputFile = workingDir.toAbsolutePath().toString();
+		FileWriter out = new FileWriter(outputFile + "/" + filename);
+		output(out, repo);
 	}
 }
