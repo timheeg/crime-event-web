@@ -1,6 +1,8 @@
-package crime.event.web;
+package crime.event.web.query;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,19 +14,19 @@ import org.openrdf.OpenRDFException;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.manager.LocalRepositoryManager;
 
-import cime.event.FakeEventCreator;
+import cime.event.query.QueryAllThefts;
 
 /**
- * Servlet implementation class FakeEventServlet
+ * Servlet implementation class QueryAllTheftServlet
  */
-@WebServlet("/fake-create")
-public class FakeEventServlet extends HttpServlet {
+@WebServlet("/query-thefts")
+public class QueryAllTheftServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public FakeEventServlet() {
+	public QueryAllTheftServlet() {
 		super();
 	}
 
@@ -54,12 +56,26 @@ public class FakeEventServlet extends HttpServlet {
 		try {
 			Repository repo = manager.getRepository("crime-event-kb");
 
-			FakeEventCreator.createFakeEvents(repo);
+			response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			out.println("<h1>Crime Event Knowledge Base</h1>");
+			out.println("<h2>Query Results</h2>");
+			out.println("<div>Query:</div>");
+			out.println("<textarea rows=\"6\" cols=\"100\" readonly=\"true\">");
+			out.println(QueryAllThefts.SelectAllThefts);
+			out.println("</textarea>");
+			out.println("<div style=\"padding-top:5px;\">Results:</div>");
+			out.println("<textarea rows=\"10\" cols=\"100\">");
+
+			List<String> results = QueryAllThefts.executeQuery(repo);
+			for (String instance : results) {
+				out.println(instance);
+			}
+
+			out.println("</textarea>");
 
 		} catch (OpenRDFException e) {
 			e.printStackTrace();
 		}
-
-		response.sendRedirect("view");
 	}
 }

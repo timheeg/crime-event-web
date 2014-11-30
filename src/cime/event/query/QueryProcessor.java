@@ -11,9 +11,14 @@ import org.openrdf.repository.RepositoryConnection;
 
 public class QueryProcessor {
 
-	// TODO Create a query method handler to parse the result set manually
-	// instead of outputting to stdout.
-
+	/**
+	 * Execute query against repo and dump the results to out.
+	 * 
+	 * @param repo
+	 * @param query
+	 * @param out
+	 * @throws OpenRDFException
+	 */
 	public static void executeQuery(Repository repo, String query,
 			OutputStream out) throws OpenRDFException {
 		RepositoryConnection conn = repo.getConnection();
