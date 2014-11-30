@@ -17,6 +17,7 @@ import cime.event.FakeEventCreator;
 import cime.event.query.QueryAllThefts;
 import cime.event.query.QueryProcessor;
 import cime.event.query.SparqlQuery;
+import cime.event.query.WorstCrimeQuery;
 import crime.event.repository.OntologyLoader;
 import crime.event.repository.RepoWriter;
 
@@ -41,6 +42,15 @@ public class RepoTest {
 
 		System.out.println("Query all thefts...");
 		List<String> results = QueryAllThefts.executeQuery(repo);
+		for (String instance : results) {
+			System.out.println(instance);
+		}
+
+		System.out.println("Query worst crime...");
+		System.out.println("Query:");
+		System.out.println(WorstCrimeQuery.SelectWorstCrime);
+		System.out.println("Result:");
+		results = WorstCrimeQuery.executeQuery(repo);
 		for (String instance : results) {
 			System.out.println(instance);
 		}

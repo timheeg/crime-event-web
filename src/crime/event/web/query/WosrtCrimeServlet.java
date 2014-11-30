@@ -14,19 +14,19 @@ import org.openrdf.OpenRDFException;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.manager.LocalRepositoryManager;
 
-import cime.event.query.QueryAllThefts;
+import cime.event.query.WorstCrimeQuery;
 
 /**
- * Servlet implementation class QueryAllTheftServlet
+ * Servlet implementation class WosrtCrimeServlet
  */
-@WebServlet("/query-thefts")
-public class QueryAllTheftServlet extends HttpServlet {
+@WebServlet("/query-worst")
+public class WosrtCrimeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public QueryAllTheftServlet() {
+	public WosrtCrimeServlet() {
 		super();
 	}
 
@@ -59,15 +59,16 @@ public class QueryAllTheftServlet extends HttpServlet {
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
 			out.println("<h1>Crime Event Knowledge Base</h1>");
-			out.println("<h2>Query Results</h2>");
+			out.println("<h2>What type of crime event has the most occurrences?</h2>");
+			out.println("<h3>Query Results</h3>");
 			out.println("<div>Query:</div>");
-			out.println("<textarea rows=\"6\" cols=\"100\" readonly=\"true\">");
-			out.println(QueryAllThefts.SelectAllThefts);
+			out.println("<textarea rows=\"10\" cols=\"100\" readonly=\"true\">");
+			out.println(WorstCrimeQuery.SelectWorstCrime);
 			out.println("</textarea>");
 			out.println("<div style=\"padding-top:5px;\">Results:</div>");
-			out.println("<textarea rows=\"10\" cols=\"100\">");
+			out.println("<textarea rows=\"4\" cols=\"100\">");
 
-			List<String> results = QueryAllThefts.executeQuery(repo);
+			List<String> results = WorstCrimeQuery.executeQuery(repo);
 			for (String instance : results) {
 				out.println(instance);
 			}
