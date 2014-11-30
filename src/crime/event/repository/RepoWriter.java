@@ -26,6 +26,7 @@ import org.openrdf.rio.Rio;
 import crime.event.vocabulary.CC;
 import crime.event.vocabulary.CRIME_EVENT;
 import crime.event.vocabulary.EVENT;
+import crime.event.vocabulary.TIME;
 
 public class RepoWriter {
 
@@ -42,6 +43,7 @@ public class RepoWriter {
 			model.setNamespace(RDFS.PREFIX, RDFS.NAMESPACE);
 			model.setNamespace(DC.PREFIX, DC.NAMESPACE);
 			model.setNamespace(OWL.PREFIX, OWL.NAMESPACE);
+			model.setNamespace(TIME.PREFIX, TIME.NAMESPACE);
 			model.setNamespace(CC.PREFIX, CC.NAMESPACE);
 			model.setNamespace(CRIME_EVENT.PREFIX, CRIME_EVENT.NAMESPACE);
 			model.setNamespace(EVENT.PREFIX, EVENT.NAMESPACE);

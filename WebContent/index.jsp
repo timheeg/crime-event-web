@@ -18,6 +18,9 @@
 	<div>
 		<a href="load">Load Knowledge Base</a>
 	</div>
+	<div>
+		<a href="fake-create">Create Fake Events</a>
+	</div>
 	<div><a href="ontology/crime-event-ontology.owl">Crime Event Ontology</a></div>
 </body>
 </html>
