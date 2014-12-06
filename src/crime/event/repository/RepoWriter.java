@@ -26,11 +26,20 @@ import org.openrdf.rio.Rio;
 import crime.event.vocabulary.CC;
 import crime.event.vocabulary.CRIME_EVENT;
 import crime.event.vocabulary.EVENT;
+import crime.event.vocabulary.GEO;
 import crime.event.vocabulary.TIME;
 
 public class RepoWriter {
 
-	public static void output(Writer out, Repository repo)
+	/**
+	 * Write the repo to out in the given format.
+	 * 
+	 * @param out
+	 * @param repo
+	 * @param format
+	 * @throws OpenRDFException
+	 */
+	public static void output(Writer out, Repository repo, RDFFormat format)
 			throws OpenRDFException {
 		RepositoryConnection conn = repo.getConnection();
 
@@ -47,18 +56,56 @@ public class RepoWriter {
 			model.setNamespace(CC.PREFIX, CC.NAMESPACE);
 			model.setNamespace(CRIME_EVENT.PREFIX, CRIME_EVENT.NAMESPACE);
 			model.setNamespace(EVENT.PREFIX, EVENT.NAMESPACE);
+			model.setNamespace(GEO.PREFIX, GEO.NAMESPACE);
 
-			Rio.write(model, out, RDFFormat.RDFXML);
+			Rio.write(model, out, format);
 		} finally {
 			conn.close();
 		}
 	}
 
+	/**
+	 * Write the repo to out in RDF/XML format.
+	 * 
+	 * @param out
+	 * @param repo
+	 * @throws OpenRDFException
+	 */
+	public static void output(Writer out, Repository repo)
+			throws OpenRDFException {
+		output(out, repo, RDFFormat.RDFXML);
+	}
+
+	/**
+	 * Write repo to a file named filename in the given format.
+	 * 
+	 * @param filename
+	 * @param repo
+	 * @param format
+	 * @throws OpenRDFException
+	 * @throws IOException
+	 */
+	public static void output(String filename, Repository repo, RDFFormat format)
+			throws OpenRDFException, IOException {
+		Path workingDir = Paths.get("");
+		String outputFile = workingDir.toAbsolutePath().toString();
+		FileWriter out = new FileWriter(outputFile + "/" + filename);
+		output(out, repo, format);
+	}
+
+	/**
+	 * Write repo to a file named filename in RDF/XML format.
+	 * 
+	 * @param filename
+	 * @param repo
+	 * @throws OpenRDFException
+	 * @throws IOException
+	 */
 	public static void output(String filename, Repository repo)
 			throws OpenRDFException, IOException {
 		Path workingDir = Paths.get("");
 		String outputFile = workingDir.toAbsolutePath().toString();
 		FileWriter out = new FileWriter(outputFile + "/" + filename);
-		output(out, repo);
+		output(out, repo, RDFFormat.RDFXML);
 	}
 }

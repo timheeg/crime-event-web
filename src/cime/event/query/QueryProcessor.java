@@ -1,5 +1,7 @@
 package cime.event.query;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 
 import org.openrdf.OpenRDFException;
@@ -33,5 +35,20 @@ public class QueryProcessor {
 		} finally {
 			conn.close();
 		}
+	}
+
+	/**
+	 * Execute query against repo and dump results to a file with the specified
+	 * filename.
+	 * 
+	 * @param repo
+	 * @param query
+	 * @param filename
+	 * @throws OpenRDFException
+	 * @throws IOException
+	 */
+	public static void executeQuery(Repository repo, String query,
+			String filename) throws OpenRDFException, IOException {
+		executeQuery(repo, query, new FileOutputStream(filename));
 	}
 }

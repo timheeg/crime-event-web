@@ -9,11 +9,13 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY crime "http://knoesis.wright.edu/ontologies/Crime#" >
 ]>
 
 
-<rdf:RDF xmlns="http://www.knoesis.org/ontologies/Crime#"
-     xml:base="http://www.knoesis.org/ontologies/Crime"
+<rdf:RDF xmlns="http://knoesis.wright.edu/ontologies/Crime"
+     xml:base="http://knoesis.wright.edu/ontologies/Crime"
+	 xmlns:crime="http://knoesis.wright.edu/ontologies/Crime"
      xmlns:dc="http://purl.org/dc/elements/1.1#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1#"
@@ -21,7 +23,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cc="http://creativecommons.org/ns#">
-    <owl:Ontology rdf:about="http://knoesis.wright.edu/ontologies/Crime">
+    <owl:Ontology rdf:about="">
         <rdfs:label>Crime Event Ontology</rdfs:label>
         <dc:format>application/rdf+xml</dc:format>
         <dc:subject>Ontology</dc:subject>
